@@ -1,73 +1,240 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,500;1,700&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: sans-serif;
 }
-body{
-    background: rgb(173, 224, 241);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+a{
+    color:black;
+    text-decoration: none;
 }
-.container{
-    position: relative;
+.print-area{
+    width: 80%;
+    margin: 20px auto;
+}
+.print-area .header{
     width: 100%;
-    max-width: 1000px;
-    min-height: 1000px;
-    background-color: #fff;
-    margin: 50px;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
-}
-/**Common style are end Here**/
-.container .left_side{
-    position: relative;
-    background: #003147;
-    padding: 40px;
-}
-.profileText{
-    position: relative;
+    height: 150px;
+    background-color: rgb(31, 34, 43);
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-.profileText .imgBx img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.profileText .imgBx{
     position: relative;
+}
+.header img{
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    overflow: hidden;
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    border: 5px solid lightblue;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    transition: .5s;
+    user-select: none;
+    filter: grayscale(100%);
 }
-.profileText h2{
-    color: #fff;
-    font-size: 1.5em;
-    margin-top: 20px;
-    text-transform: uppercase;
+.header img:hover{
+    filter: grayscale(0%);
+    transform: scale(1.05);
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
+}
+.header-text{
+    color: white;
+    width: 60%;
+    margin-left: auto;
+}
+.header-text h1{
+    font-size: 65px;
+    font-weight: normal;
+}
+.header-text p{
+    font-size: 20px;
+    color: lightgray;
+}
+/**Header part end here**/
+/**botom part start**/
+.content{
+    display: flex;
+    flex-wrap: wrap;
+}
+/*** Left part Start**/
+.left-area{
+    width: 30%;
+    background-color: antiquewhite;
     text-align: center;
-    font-weight: 600;
-    line-height: 1.4em;
+    padding-bottom: 20px;
 }
-.profileText span{
-    font-size: 0.8em;
-    font-weight: 300;
+/**contact design**/
+.left-area .contact{
+    margin-top: 120px;
+    padding: 0 30px;
 }
-/**Left Side style End Here**/
-.container .right_side{
+.contact h4{
+    font-size: 30px;
+    font-weight: normal;
+    margin: 20px 0;
+}
+.contact h5{
+    font-size: 18px;
+    margin: 10px 0;
+}
+.contact p{
+    font-size: 17px;
+}
+/**skill design**/
+.skills{
+    margin-top: 20px;   
+}
+.skills h1{
+    font-size: 30px;
+    font-weight: normal;
+}
+.bars{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px 10px;
+    padding: 0 20px;
+}
+.bars .bar p{
+    font-size: 15px;
+    font-weight: bold;
+}
+.bar span{
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-color: rgb(191, 191, 191);
+    margin-top: 10px;
+    border-radius: 10px;
     position: relative;
-    background: #fff;
-    padding: 40px;
+}
+.bar span::before{
+    position: absolute;
+    content: "";
+    width: 80%;
+    height: 80%;
+    background-color: black;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    border-radius: 10px;
+}
+/**follow me design**/
+.follow h1{
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: normal;
+}
+.follow h4{
+    font-size: 18px;
+    color: gray;
+    margin-top: 15px;
+}
+.follow p a{
+    font-size: 17px;
+    color: gray;
+}
+/**Left part end Here**/
+/**Right part start**/
+.right-area{
+    width: 70%;
+    padding: 30px 50px 0px 50px;
+}
+/**about me design**/
+.right-area h1{
+    font-size: 35px;
+    font-weight: normal;
+}
+.right-area h1 span{
+    margin-right: 30px;
+    font-size: 50px;
+    color: lightgray;
+}
+.right-area p{
+    padding-left: 87px;
+    text-align: justify;
+    word-break: break-all;
+    font-size: 17px;
+    color: rgb(78, 78, 78);
+    margin-top: 10px;
+}
+/**about me end here**/
+/**Work design**/
+.work-group{
+    margin: 10px 0;
+}
+.work .work-group{
+    position: relative;
+}
+
+.work-group h3{
+    font-size: 22px;
+    font-weight: normal;
+    padding-left: 73px;
+}
+.work-group h4{
+    font-size: 18px;
+    font-weight: normal;
+    padding-left: 73px;
+    color: gray;
+}
+.work-group span{
+    position: absolute;
+    top:10px;
+    right: 0;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}
+/**Work end here**/
+/**education design**/
+.education{
+    margin-top: 10px;
+}
+.edu-group{
+    position: relative;
+    margin: 10px 0;
+}
+.edu-group h4{
+    padding-left: 80px;
+    font-size: 20px;
+    font-weight: normal;
+}
+.edu-group span{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+.edu-group p{
+    padding-left: 80px;
+}
+button{
+    font-size: 25px;
+    padding: 10px 20px;
+    margin: 50px 50%;
+    background-color: rgb(83, 83, 83);
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    transition: .5s;
+}
+button:hover{
+    background-color: black;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+/**Media query**/
+@media print {
+    body *{
+        visibility: hidden;
+    }
+    .print-area *{
+        visibility: visible;
+    }
 }
